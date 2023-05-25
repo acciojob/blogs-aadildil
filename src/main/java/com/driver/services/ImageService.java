@@ -62,7 +62,7 @@ public class ImageService {
         int screenHeight= Integer.parseInt(screenDimension[1]);
         int screenArea=screenWidth*screenHeight;
 
-        return (screenArea/area);
+        return (screenWidth/width)*(screenHeight/height);
 
 
 
