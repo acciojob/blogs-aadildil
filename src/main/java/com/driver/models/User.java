@@ -15,7 +15,7 @@ public class User {
     private int id;
 
     @Column
-    private String userName;
+    private String Username;
 
     @Column
     private String password;
@@ -30,12 +30,12 @@ public class User {
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     @JsonIgnoreProperties("user")
-    List<Blog> blogs=new ArrayList<>();
+    List<Blog> BlogList =new ArrayList<>();
 
 
-    public User(String userName, String password)
+    public User(String Username, String password)
     {
-        this.userName=userName;
+        this.Username = Username;
         this.password=password;
         this.firstName="test";
         this.lastName="test";
@@ -52,12 +52,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return Username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.Username = username;
     }
 
     public String getPassword() {
@@ -84,11 +84,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public List<Blog> getBlogs() {
-        return blogs;
+    public List<Blog> getBlogList() {
+        return BlogList;
     }
 
-    public void setBlogs(List<Blog> blogs) {
-        this.blogs = blogs;
+    public void setBlogList(List<Blog> blogList) {
+        this.BlogList = blogList;
     }
 }

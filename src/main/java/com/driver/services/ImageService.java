@@ -24,13 +24,13 @@ public class ImageService {
         image.setDimensions(dimensions);
         image.setBlog(blog);
 
-        List<Image> images=blog.getImages();
+        List<Image> images=blog.getImageList();
         images.add(image);
-        blog.setImages(images);
+        blog.setImageList(images);
 
         Blog savedBlog=blogRepository2.save(blog);
 
-        List<Image> imageList=savedBlog.getImages();
+        List<Image> imageList=savedBlog.getImageList();
         Image image1=imageList.get(imageList.size()-1);
         return image1;
 

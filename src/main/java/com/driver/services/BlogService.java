@@ -1,15 +1,12 @@
 package com.driver.services;
 
 import com.driver.models.Blog;
-import com.driver.models.Image;
 import com.driver.models.User;
 import com.driver.repositories.BlogRepository;
-import com.driver.repositories.ImageRepository;
 import com.driver.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -32,11 +29,11 @@ public class BlogService {
 
         blog.setUser(user);
 
-        List<Blog> userBlogs=user.getBlogs();
+        List<Blog> userBlogs=user.getBlogList();
         userBlogs.add(blog);
 
         User savedUser=userRepository1.save(user);
-        List<Blog> blogs=savedUser.getBlogs();
+        List<Blog> blogs=savedUser.getBlogList();
         Blog blog1=blogs.get(blogs.size()-1);
         return blog1;
 
